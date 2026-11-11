@@ -1,0 +1,35 @@
+{
+	"name": "@teatoolkit/sbud",
+	"version": "0.0.1",
+	"description": "Client for the sbud service, which manages Docker Sandboxes for AI agents. Early preview.",
+	"license": "MIT",
+	"author": "teaToolkit",
+	"private": false,
+	"type": "module",
+	"engines": {
+		"node": ">=20"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json",
+		"check": "tsc -p tsconfig.json",
+		"test": "npm run check && node --test --test-reporter=spec \"build/test/**/*.test.js\"",
+		"prepack": "npm run build"
+	},
+	"devDependencies": {
+		"@types/node": "20.19.43",
+		"typescript": "5.9.3"
+	}
+}
